@@ -24,6 +24,7 @@ Use a port map to manage the ports for each instance in your cluster.  None of t
 | The Island | 7777 | 27015 | 27020 |
 | Lost Island | 7779 | 27016 | 27021 |
 | Ragnarok | 7781 | 27017 | 27022 |
+| Aberration | 7783 | 27018 | 27023 |
 
 ```
 # Ports

@@ -23,6 +23,7 @@ Use a port map to manage the ports for each instance in your cluster.  None of t
 | -- | -- | --| -- |
 | The Island | 7777 | 27015 | 27020 |
 | Lost Island | 7779 | 27016 | 27021 |
+| Ragnarok | 7781 | 27017 | 27022 |
 
 ```
 # Ports
@@ -41,7 +42,7 @@ clusterid="FOADCluster"
 # Start Command Params
 #  - this should be templated for values
 #    - i'm aware that it currently isn't
-startparameters="${defaultmap}?SessionName=FOAD ${defaultmap} Server?AltSaveDirectoryName=${defaultmap}?listen?MultiHome=${ip}?MaxPlayers=${maxplayers}?QueryPort=${queryport}?RCONPort=${rconport}?Port=${port} -automanagedmods -NoTransferFromFiltering -clusterid=${clusterid}"
+startparameters="${defaultmap}?SessionName=FOAD ${defaultmap} Server?AltSaveDirectoryName=${defaultmap}?listen?MultiHome=${ip}?MaxPlayers=${maxplayers}?QueryPort=${queryport}?RCONPort=${rconport}?Port=${port}?PreventOfflinePvP=true?PreventOfflinePvPInterval=900 -automanagedmods -NoTransferFromFiltering -clusterid=${clusterid}"
 
 ```
 
@@ -61,7 +62,7 @@ The `GameUserSettings.ini` file is located in `./serverfiles/ShooterGame/Saved/C
 | OverrideOfficialDifficulty | 5.0 | ServerSettings |
 | RCONPort | *RCONport from arkserver.cfg* | ServerSettings | Be sure to set this to match the `arkserver.cfg` setting. May be easier to set RCONEnable=False and not deal with it. |
 | XPMultiplier | 3.0 | ServerSettings | |
-| HarvestAmountMultiplier | 3.0 | ServerSettings | |
+| HarvestAmountMultiplier | 2.0 | ServerSettings | |
 | TamingSpeedMultiplier | 3.0 | ServerSettings | |
 
 
@@ -70,7 +71,7 @@ Add these to the bottom of the ServerSettings
 ```
 OverrideOfficialDifficulty=5.0
 XPMultiplier=3.0
-HarvestAmountMultiplier=3.0
+HarvestAmountMultiplier=2.0
 TamingSpeedMultiplier=3.0
 ```
 
